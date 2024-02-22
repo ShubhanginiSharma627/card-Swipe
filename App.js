@@ -138,9 +138,10 @@ export default class App extends React.Component {
               {
                 transform: [{ translateY }],
                 height: i === this.state.currentIndex + 1 ? SCREEN_HEIGHT - 100 :  SCREEN_HEIGHT - 80 ,
-                width: SCREEN_WIDTH - 30,
+                width: i === this.state.currentIndex + 1 ? SCREEN_WIDTH - 50 : SCREEN_WIDTH - 70,
                 padding: 10,
                 position: 'absolute',
+                marginLeft: i === this.state.currentIndex + 1 ? 10 : 20,
                 backgroundColor: item.color,
                 borderRadius: 15,
               },
@@ -164,10 +165,10 @@ export default class App extends React.Component {
             key={item.id} style={[{
               opacity: this.nextCardOpacity,
               transform: [{ scale: this.nextCardScale }],
-              height: SCREEN_HEIGHT - 120, width: SCREEN_WIDTH - 30, padding: 10, position: 'absolute',
+              height: SCREEN_HEIGHT - 120, width: SCREEN_WIDTH - 70, padding: 10, position: 'absolute',
               backgroundColor: item.color,
               borderRadius:15,
-              
+              marginLeft: 20
             }]}>
             <Animated.View style={{ opacity: 0, transform: [{ rotate: '-30deg' }], position: 'absolute', top: 50, left: 40, zIndex: 1000 ,backgroundColor:"#3cb043",borderRadius:50}}>
            
