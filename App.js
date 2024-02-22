@@ -5,11 +5,11 @@ import { AntDesign } from '@expo/vector-icons'; // Import Expo Icons
 const SCREEN_HEIGHT = Dimensions.get('window').height
 const SCREEN_WIDTH = Dimensions.get('window').width
 const Users = [
-  { id: "1",color:"#99cdff" },
-  { id: "2",color:"#c7ffd0" },
-  { id: "3",color:"#fde295" },
-  { id: "4",color:"#ff9b56" },
-  { id: "5",color:"#d52d00" },
+  { id: "1", color: "#99cdff" },
+  { id: "2", color: "#c7ffd0" },
+  { id: "3", color: "#fde295" },
+  { id: "4", color: "#ff9b56" },
+  { id: "5", color: "#d52d00" },
 ]
 
 export default class App extends React.Component {
@@ -109,15 +109,15 @@ export default class App extends React.Component {
         return (
           <Animated.View
             {...this.PanResponder.panHandlers}
-            key={item.id} style={[this.rotateAndTranslate, { height: SCREEN_HEIGHT - 120, width: SCREEN_WIDTH - 30, padding: 10, position: 'absolute', backgroundColor: item.color,borderRadius:15 }]}>
-            <Animated.View style={{ opacity: this.likeOpacity, transform: [{ rotate: '-30deg' }], position: 'absolute', top: 50, left: 40, zIndex: 1000, backgroundColor:"#3cb043",borderRadius:50 }}>
-     
-                <AntDesign name="check" size={40} color="white" style={{padding:10,fontWeight:"900"}}/>
+            key={item.id} style={[this.rotateAndTranslate, { height: SCREEN_HEIGHT - 120, width: SCREEN_WIDTH - 30, padding: 10, position: 'absolute', backgroundColor: item.color, borderRadius: 15 }]}>
+            <Animated.View style={{ opacity: this.likeOpacity, transform: [{ rotate: '-30deg' }], position: 'absolute', top: 50, left: 40, zIndex: 1000, backgroundColor: "#3cb043", borderRadius: 50 }}>
+
+              <AntDesign name="check" size={40} color="white" style={{ padding: 10, fontWeight: "900" }} />
 
             </Animated.View>
 
-            <Animated.View style={{ opacity: this.dislikeOpacity, transform: [{ rotate: '30deg' }], position: 'absolute', top: 50, right: 40, zIndex: 1000,backgroundColor:"red",borderRadius:50 }}>
-              <AntDesign name="close" size={40} color="white"  style={{padding:10}}/>
+            <Animated.View style={{ opacity: this.dislikeOpacity, transform: [{ rotate: '30deg' }], position: 'absolute', top: 50, right: 40, zIndex: 1000, backgroundColor: "red", borderRadius: 50 }}>
+              <AntDesign name="close" size={40} color="white" style={{ padding: 10 }} />
             </Animated.View>
 
           </Animated.View>
@@ -126,18 +126,18 @@ export default class App extends React.Component {
       else if (i === this.state.currentIndex + 1 || i === this.state.currentIndex + 2) {
         // Add margin to the top for the next two cards
         const isNextCard = i === this.state.currentIndex + 1;
-      const translateY = this.position.y.interpolate({
-        inputRange: [0, SCREEN_HEIGHT],
-        outputRange: [0, isNextCard ? -80 : -100], // Adjust these values based on your preference
-        extrapolate: 'clamp',
-      });
+        const translateY = this.position.y.interpolate({
+          inputRange: [0, SCREEN_HEIGHT],
+          outputRange: [0, isNextCard ? -80 : -100], // Adjust these values based on your preference
+          extrapolate: 'clamp',
+        });
         return (
           <Animated.View
             key={item.id}
             style={[
               {
                 transform: [{ translateY }],
-                height: i === this.state.currentIndex + 1 ? SCREEN_HEIGHT - 110 :  SCREEN_HEIGHT - 100 ,
+                height: i === this.state.currentIndex + 1 ? SCREEN_HEIGHT - 110 : SCREEN_HEIGHT - 100,
                 width: i === this.state.currentIndex + 1 ? SCREEN_WIDTH - 50 : SCREEN_WIDTH - 70,
                 padding: 10,
                 position: 'absolute',
@@ -147,15 +147,15 @@ export default class App extends React.Component {
               },
             ]}
           >
-           <Animated.View style={{ opacity: this.likeOpacity, transform: [{ rotate: '-30deg' }], position: 'absolute', top: 50, left: 40, zIndex: 1000, backgroundColor:"#3cb043",borderRadius:50 }}>
-     
-     <AntDesign name="check" size={40} color="white" style={{padding:10,fontWeight:"900"}}/>
+            <Animated.View style={{ opacity: this.likeOpacity, transform: [{ rotate: '-30deg' }], position: 'absolute', top: 50, left: 40, zIndex: 1000, backgroundColor: "#3cb043", borderRadius: 50 }}>
 
- </Animated.View>
+              <AntDesign name="check" size={40} color="white" style={{ padding: 10, fontWeight: "900" }} />
 
- <Animated.View style={{ opacity: this.dislikeOpacity, transform: [{ rotate: '30deg' }], position: 'absolute', top: 50, right: 40, zIndex: 1000,backgroundColor:"red",borderRadius:50 }}>
-   <AntDesign name="close" size={40} color="white"  style={{padding:10}}/>
- </Animated.View>
+            </Animated.View>
+
+            <Animated.View style={{ opacity: this.dislikeOpacity, transform: [{ rotate: '30deg' }], position: 'absolute', top: 50, right: 40, zIndex: 1000, backgroundColor: "red", borderRadius: 50 }}>
+              <AntDesign name="close" size={40} color="white" style={{ padding: 10 }} />
+            </Animated.View>
           </Animated.View>
         );
       }
@@ -167,17 +167,17 @@ export default class App extends React.Component {
               transform: [{ scale: this.nextCardScale }],
               height: SCREEN_HEIGHT - 120, width: SCREEN_WIDTH - 70, padding: 10, position: 'absolute',
               backgroundColor: item.color,
-              borderRadius:15,
+              borderRadius: 15,
               marginLeft: 20
             }]}>
-            <Animated.View style={{ opacity: 0, transform: [{ rotate: '-30deg' }], position: 'absolute', top: 50, left: 40, zIndex: 1000 ,backgroundColor:"#3cb043",borderRadius:50}}>
-           
-                <AntDesign name="check" size={40} color="white" style={{padding:20}}/>
+            <Animated.View style={{ opacity: 0, transform: [{ rotate: '-30deg' }], position: 'absolute', top: 50, left: 40, zIndex: 1000, backgroundColor: "#3cb043", borderRadius: 50 }}>
+
+              <AntDesign name="check" size={40} color="white" style={{ padding: 20 }} />
 
             </Animated.View>
 
-            <Animated.View style={{ opacity: 0, transform: [{ rotate: '30deg' }], position: 'absolute', top: 50, right: 40, zIndex: 1000 ,backgroundColor:"red",borderRadius:50 }}>
-              <AntDesign name="close" size={40} color="white" style={{padding:20}}/>
+            <Animated.View style={{ opacity: 0, transform: [{ rotate: '30deg' }], position: 'absolute', top: 50, right: 40, zIndex: 1000, backgroundColor: "red", borderRadius: 50 }}>
+              <AntDesign name="close" size={40} color="white" style={{ padding: 20 }} />
             </Animated.View>
 
           </Animated.View>
@@ -190,7 +190,7 @@ export default class App extends React.Component {
     return (
       <View style={{ flex: 1 }}>
         <View style={{ height: 60 }}></View>
-        <View style={{ flex: 1,marginHorizontal:15 }}>{this.renderUsers()}</View>
+        <View style={{ flex: 1, marginHorizontal: 15 }}>{this.renderUsers()}</View>
         <View style={{ height: 60 }}></View>
       </View>
     );
