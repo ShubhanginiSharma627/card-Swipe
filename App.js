@@ -137,7 +137,7 @@ export default class App extends React.Component {
             style={[
               {
                 transform: [{ translateY }],
-                height: i === this.state.currentIndex + 1 ? SCREEN_HEIGHT - 100 :  SCREEN_HEIGHT - 80 ,
+                height: i === this.state.currentIndex + 1 ? SCREEN_HEIGHT - 110 :  SCREEN_HEIGHT - 100 ,
                 width: i === this.state.currentIndex + 1 ? SCREEN_WIDTH - 50 : SCREEN_WIDTH - 70,
                 padding: 10,
                 position: 'absolute',
